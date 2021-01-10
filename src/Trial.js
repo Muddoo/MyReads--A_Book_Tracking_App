@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 
 class BooksApp extends React.Component {
   state = {
+      value: '',
       original: [],
       searchedBooks: [],
       currentBooks: []
@@ -16,11 +17,12 @@ class BooksApp extends React.Component {
   }
 
   handleChange = async (e) => {
+    const value = e.target.value;  
     const currentBooksIds = this.state.currentBooks.map(book => book.id);
     let   original = e.target.value ? await BooksAPI.search(e.target.value) : [];
           original = original.error ? [] : original;
     const searchedBooks = original.filter(({id}) => !currentBooksIds.includes(id));
-    this.setState({original,searchedBooks});
+    this.setState({value,original,searchedBooks});
   }
 
   handleSelect = async (e,{id}) => {
@@ -41,7 +43,7 @@ class BooksApp extends React.Component {
                 <div className="search-books-bar">
                 <Link to="/" className="close-search">Close</Link>
                 <div className="search-books-input-wrapper">
-                    <input type="text" placeholder="Search by title or author" onChange={this.handleChange} autoFocus/>
+                    <input type="text" placeholder="Search by title or author" onChange={this.handleChange} value={value} autoFocus/>
                 </div>
                 </div>
                 <div className="search-books-results">
