@@ -1,1 +1,1 @@
-# MyReads-A-Book-Tracking-App
+# MyReads: A Book Tracking App
