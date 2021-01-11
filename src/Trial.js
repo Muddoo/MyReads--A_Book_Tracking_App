@@ -18,14 +18,15 @@ class BooksApp extends React.Component {
 
   handleChange = async (e) => {
     const value = e.target.value;  
+    this.setState({value});
     const currentBooksIds = this.state.currentBooks.map(book => book.id);
     let   original = e.target.value ? await BooksAPI.search(e.target.value) : [];
           original = original.error ? [] : original;
     const searchedBooks = original.filter(({id}) => !currentBooksIds.includes(id));
-    this.setState({value,original,searchedBooks});
+    this.setState({original,searchedBooks});
   }
 
-  handleSelect = async (e,{id}) => {
+  handleSelect = async (e,id) => {
       await BooksAPI.update(id, e.target.value);
       const currentBooks = await BooksAPI.getAll();
       const currentBooksIds = currentBooks.map(book => book.id);
@@ -54,18 +55,17 @@ class BooksApp extends React.Component {
                             <div className="book-top">
                                 <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${imageLinks?.thumbnail})` }}></div>
                                 <div className="book-shelf-changer">
-                                <select onChange={e => this.handleSelect(e,{id,title,authors,imageLinks})}>
+                                <select onChange={e => this.handleSelect(e,id)}>
                                     <option value="move" disabled>Move to...</option>
-                                    <option value="" hidden></option>
+                                    <option value="none" hidden>None</option>
                                     <option value="currentlyReading">Currently Reading</option>
                                     <option value="wantToRead">Want to Read</option>
                                     <option value="read">Read</option>
-                                    <option value="none">None</option>
                                 </select>
                                 </div>
                             </div>
                             <div className="book-title">{title}</div>
-                            <div className="book-authors">{authors?.[0] || 'UnKnown Author'}</div>
+                            <div className="book-authors">{authors ? authors.join(' / ') : 'UnKnown Author'}</div>
                             </div>
                         </li>
                     )) }
@@ -86,13 +86,13 @@ class BooksApp extends React.Component {
                     <div className="bookshelf-books">
                         <ol className="books-grid">
                             {currentBooks.filter(({shelf}) => shelf === 'currentlyReading')
-                                         .map(({id,title,authors,imageLinks}) => (
+                                         .map(({id,title,authors,imageLinks,shelf}) => (
                                             <li key={id}>
                                                 <div className="book">
                                                 <div className="book-top">
                                                     <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${imageLinks?.thumbnail})` }}></div>
                                                     <div className="book-shelf-changer">
-                                                    <select onChange={e => this.handleSelect(e,{id,title,authors,imageLinks})}>
+                                                    <select onChange={e => this.handleSelect(e,id)} value={shelf}>
                                                         <option value="move" disabled>Move to...</option>
                                                         <option value="" hidden></option>
                                                         <option value="currentlyReading">Currently Reading</option>
@@ -116,13 +116,13 @@ class BooksApp extends React.Component {
                     <div className="bookshelf-books">
                         <ol className="books-grid">
                             {currentBooks.filter(({shelf}) => shelf === 'wantToRead')
-                                         .map(({id,title,authors,imageLinks}) => (
+                                         .map(({id,title,authors,imageLinks,shelf}) => (
                                             <li key={id}>
                                                 <div className="book">
                                                 <div className="book-top">
                                                     <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${imageLinks?.thumbnail})` }}></div>
                                                     <div className="book-shelf-changer">
-                                                    <select onChange={e => this.handleSelect(e,{id,title,authors,imageLinks})}>
+                                                    <select onChange={e => this.handleSelect(e,id)} value={shelf}>
                                                         <option value="move" disabled>Move to...</option>
                                                         <option value="" hidden></option>
                                                         <option value="currentlyReading">Currently Reading</option>
@@ -146,13 +146,13 @@ class BooksApp extends React.Component {
                     <div className="bookshelf-books">
                         <ol className="books-grid">
                             {currentBooks.filter(({shelf}) => shelf === 'read')
-                                         .map(({id,title,authors,imageLinks}) => (
+                                         .map(({id,title,authors,imageLinks,shelf}) => (
                                             <li key={id}>
                                                 <div className="book">
                                                 <div className="book-top">
                                                     <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${imageLinks?.thumbnail})` }}></div>
                                                     <div className="book-shelf-changer">
-                                                    <select onChange={e => this.handleSelect(e,{id,title,authors,imageLinks})}>
+                                                    <select onChange={e => this.handleSelect(e,id)} value={shelf}>
                                                         <option value="move" disabled>Move to...</option>
                                                         <option value="" hidden></option>
                                                         <option value="currentlyReading">Currently Reading</option>
