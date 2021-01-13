@@ -19,7 +19,7 @@ function Home({currentBooks,handleSelect}) {
                 )}
             </div>
             <div className="open-search">
-            <Link to="/search" className="button">Add a book</Link>
+                <Link to="/search" className="button">Add a book</Link>
             </div>
         </div>
     )
