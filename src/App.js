@@ -1,7 +1,7 @@
 import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import Search from './components/Search'
 import Home from './components/Home'
 
@@ -48,7 +48,7 @@ class BooksApp extends React.Component {
     const debounced = this.debounce(this.handleChange,200);
 
     return (
-      <BrowserRouter>
+      <HashRouter>
       <div className="app">
         <Route path="/search" render={props => 
             <Search {...props} 
@@ -66,7 +66,7 @@ class BooksApp extends React.Component {
             />}
         />
       </div>
-      </BrowserRouter>
+      </HashRouter>
     )
   }
 }
