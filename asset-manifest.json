@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Muddoo/MyReads--A_Book_Tracking_Appstatic/css/main.536857d9.chunk.css",
-    "main.js": "/Muddoo/MyReads--A_Book_Tracking_Appstatic/js/main.24dd0c1f.chunk.js",
-    "main.js.map": "/Muddoo/MyReads--A_Book_Tracking_Appstatic/js/main.24dd0c1f.chunk.js.map",
-    "runtime-main.js": "/Muddoo/MyReads--A_Book_Tracking_Appstatic/js/runtime-main.104c701f.js",
-    "runtime-main.js.map": "/Muddoo/MyReads--A_Book_Tracking_Appstatic/js/runtime-main.104c701f.js.map",
-    "static/js/2.ae4f373f.chunk.js": "/Muddoo/MyReads--A_Book_Tracking_Appstatic/js/2.ae4f373f.chunk.js",
-    "static/js/2.ae4f373f.chunk.js.map": "/Muddoo/MyReads--A_Book_Tracking_Appstatic/js/2.ae4f373f.chunk.js.map",
-    "index.html": "/Muddoo/MyReads--A_Book_Tracking_Appindex.html",
-    "static/css/main.536857d9.chunk.css.map": "/Muddoo/MyReads--A_Book_Tracking_Appstatic/css/main.536857d9.chunk.css.map",
-    "static/js/2.ae4f373f.chunk.js.LICENSE.txt": "/Muddoo/MyReads--A_Book_Tracking_Appstatic/js/2.ae4f373f.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/Muddoo/MyReads--A_Book_Tracking_Appstatic/media/arrow-drop-down.4378492a.svg"
+    "main.css": "/Muddoo/MyReads--A_Book_Tracking_App/tree/gh-pages/static/css/main.55a0f488.chunk.css",
+    "main.js": "/Muddoo/MyReads--A_Book_Tracking_App/tree/gh-pages/static/js/main.24dd0c1f.chunk.js",
+    "main.js.map": "/Muddoo/MyReads--A_Book_Tracking_App/tree/gh-pages/static/js/main.24dd0c1f.chunk.js.map",
+    "runtime-main.js": "/Muddoo/MyReads--A_Book_Tracking_App/tree/gh-pages/static/js/runtime-main.5c4e08a9.js",
+    "runtime-main.js.map": "/Muddoo/MyReads--A_Book_Tracking_App/tree/gh-pages/static/js/runtime-main.5c4e08a9.js.map",
+    "static/js/2.ae4f373f.chunk.js": "/Muddoo/MyReads--A_Book_Tracking_App/tree/gh-pages/static/js/2.ae4f373f.chunk.js",
+    "static/js/2.ae4f373f.chunk.js.map": "/Muddoo/MyReads--A_Book_Tracking_App/tree/gh-pages/static/js/2.ae4f373f.chunk.js.map",
+    "index.html": "/Muddoo/MyReads--A_Book_Tracking_App/tree/gh-pages/index.html",
+    "static/css/main.55a0f488.chunk.css.map": "/Muddoo/MyReads--A_Book_Tracking_App/tree/gh-pages/static/css/main.55a0f488.chunk.css.map",
+    "static/js/2.ae4f373f.chunk.js.LICENSE.txt": "/Muddoo/MyReads--A_Book_Tracking_App/tree/gh-pages/static/js/2.ae4f373f.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/Muddoo/MyReads--A_Book_Tracking_App/tree/gh-pages/static/media/arrow-drop-down.4378492a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.104c701f.js",
+    "static/js/runtime-main.5c4e08a9.js",
     "static/js/2.ae4f373f.chunk.js",
-    "static/css/main.536857d9.chunk.css",
+    "static/css/main.55a0f488.chunk.css",
     "static/js/main.24dd0c1f.chunk.js"
   ]
 }
